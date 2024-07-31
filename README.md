@@ -20,7 +20,7 @@ This is a Spring Boot application that provides an endpoint to convert between d
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/nosto-currency-converter.git
+git clone https://github.com/Ezugudor/nosto-currency-converter.git
 cd nosto-currency-converter
 ```
 
