@@ -14,13 +14,18 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class NostoCurrencyConverterApplication {
 
 	public static void main(String[] args) {
-		// Dotenv.configure().load();
 		SpringApplication.run(NostoCurrencyConverterApplication.class, args);
 	}
 
 	@Bean
 	public Dotenv dotenv() {
-		return Dotenv.configure().load();
+		String envFilePath;
+		if ("true".equals(System.getenv("IS_DOCKER_ENVIRONMENT"))) {
+			envFilePath = "/app";
+		} else {
+			envFilePath = ".";
+		}
+		return Dotenv.configure().directory(envFilePath).load();
 	}
 
 	@Bean

@@ -1,0 +1,13 @@
+<configuration>
+    <appender name="INFLUXDB"  class="com.nosto.nosto_currency_converter.ExchangeRate.infrastructure.external.logback.InfluxDBAppender">
+        <influxDBUrl>${DOCKER_INFLUXDB_INIT_URL}</influxDBUrl>
+         <influxDBToken>${DOCKER_INFLUXDB_INIT_ADMIN_TOKEN}</influxDBToken>
+        <influxDBOrg>${DOCKER_INFLUXDB_INIT_ORG}</influxDBOrg>
+        <influxDBBucket>${DOCKER_INFLUXDB_INIT_BUCKET}</influxDBBucket>
+        <measurement>${DOCKER_INFLUXDB_INIT_MEASUREMENT}</measurement>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="INFLUXDB" />
+    </root>
+</configuration>

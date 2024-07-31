@@ -39,6 +39,7 @@ public class SwopExchangeRateProvider extends BackendBaseService implements IExc
         this.restTemplate = restTemplate;
         this.dotenv = dotenv;
         this.messageSource = messageSource;
+
         this.swopBaseUrl = this.dotenv.get("SWOP_BASE_ENDPOINT");
         this.swopApiKey = this.dotenv.get("SWOP_API_KEY");
         this.locale = LocaleContextHolder.getLocale();

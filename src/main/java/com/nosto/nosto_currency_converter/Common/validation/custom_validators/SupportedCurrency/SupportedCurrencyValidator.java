@@ -11,7 +11,7 @@ import com.nosto.nosto_currency_converter.Common.ServiceResult;
 import com.nosto.nosto_currency_converter.ExchangeRate.contract.IExchange;
 import com.nosto.nosto_currency_converter.ExchangeRate.infrastructure.external.swop.Currency;
 
-import io.github.cdimascio.dotenv.Dotenv;
+// import io.github.cdimascio.dotenv.Dotenv;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
@@ -21,7 +21,7 @@ public class SupportedCurrencyValidator implements ConstraintValidator<isSupport
     private final IExchange exchange;
     private MessageSource messageSource;
 
-    public SupportedCurrencyValidator(List<Currency> currencyList, Dotenv dotenv, IExchange exchange,
+    public SupportedCurrencyValidator(List<Currency> currencyList, IExchange exchange,
             MessageSource messageSource) {
         this.exchange = exchange;
         this.messageSource = messageSource;
